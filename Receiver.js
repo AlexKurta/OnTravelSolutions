@@ -3,8 +3,8 @@ class Receiver {
         this.domain = domain;
         window.addEventListener("message", this.listener.bind(this)); 
     }                
-    listener(event) {  
-        if (event.origin !== this.domain) 
+    listener(event) {        
+        if (event.origin != this.domain) 
             return;                     
         if (event.data) {
             let message = JSON.parse(event.data), // само сообщение
