@@ -4,8 +4,10 @@ class Receiver {
         window.addEventListener("message", this.listener.bind(this)); 
     }                
     listener(event) {        
-        if (event.origin != this.domain) 
-            return;                     
+        /*if (event.origin != this.domain) 
+            return; */
+        console.log(event.origin);
+        console.log(this.domain);
         if (event.data) {
             let message = JSON.parse(event.data), // само сообщение
                 state = Object.keys(message)[0], // состояние 'add', 'read' или 'delete'
