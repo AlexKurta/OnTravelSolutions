@@ -4,8 +4,8 @@ class Receiver {
         window.addEventListener("message", this.listener.bind(this)); 
     }                
     listener(event) {        
-        /*if (event.origin != this.domain) 
-            return; */
+        if (event.origin != this.domain) //запускается с localhost или сервера 
+            return; 
         console.log(event.origin);
         console.log(this.domain);
         if (event.data) {
